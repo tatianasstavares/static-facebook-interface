@@ -79,7 +79,7 @@ class PostList extends Component {
           {
             id: 2,
             author: {
-              name: "Thaine Souto",
+              name: "Thaiane Souto",
               avatar: thaiane,
             },
             content: "Olha só, me deu até mais motivação!Parabéns!",
@@ -90,7 +90,30 @@ class PostList extends Component {
   };
 
   render() {
-    return <h1>Olá</h1>;
+    return (
+      <div>
+        {this.state.posts.map((post) => {
+          return (
+            <div key={post.id}>
+              <img src={post.author.avatar} alt="" />
+              <p>
+                {post.author.name} <span>{post.date}</span>
+              </p>
+              <p>{post.content}</p>
+              {post.comments.map((comment) => {
+                  return (
+                    <div key={comment.id}>
+                        <img src={comment.author.avatar} alt="" />
+                        <p>{comment.author.name}</p>
+                        <p>{comment.content}</p>
+                    </div>
+                  )
+              })}
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }
 

@@ -4,6 +4,7 @@ import emmanuel from "../assets/emmanuel-souto.jpg";
 import henrique from "../assets/henrique-schramm.jpg";
 import thiago from "../assets/thiago-tavares.jpg";
 import diego from "../assets/diego-fernandes.jpg";
+import Post from "./Post"
 
 class PostList extends Component {
   state = {
@@ -91,28 +92,11 @@ class PostList extends Component {
 
   render() {
     return (
-      <div>
-        {this.state.posts.map((post) => {
-          return (
-            <div key={post.id}>
-              <img src={post.author.avatar} alt="" />
-              <p>
-                {post.author.name} <span>{post.date}</span>
-              </p>
-              <p>{post.content}</p>
-              {post.comments.map((comment) => {
-                  return (
-                    <div key={comment.id}>
-                        <img src={comment.author.avatar} alt="" />
-                        <p>{comment.author.name}</p>
-                        <p>{comment.content}</p>
-                    </div>
-                  )
-              })}
-            </div>
-          );
-        })}
-      </div>
+     this.state.posts.map((post) => {
+       return (
+        <Post key={post.id} authorName={post.author.name} avatar={post.author.avatar } date={post.date} content={post.content}/>
+       )
+     })
     );
   }
 }

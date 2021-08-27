@@ -4,10 +4,10 @@ import PostList from './PostList';
 
 function App() {
     return (
-        <>
+        <main>
             <Header/>
             <PostList/>
-        </>
+        </main>
     )
 }
 export default App

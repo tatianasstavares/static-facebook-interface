@@ -1,14 +1,20 @@
 import React from "react";
+import postStyle from "../style/Post.module.css";
 
 function Comment({ comment }) {
-
-    const {author: { avatar, authorName }, content } = comment
+  const {
+    author: { avatar, name },
+    content,
+  } = comment;
   return (
-    <div>
+    <section className={postStyle.commentsContainer}>
       <img src={avatar} alt="profile" />
-      <p>{authorName}</p>
-      <p>{content}</p>
-    </div>
+      <div className={postStyle.infoPost}>
+        <p>
+          {name} <span>{content}</span>
+        </p>
+      </div>
+    </section>
   );
 }
 export default Comment;

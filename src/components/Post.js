@@ -1,5 +1,6 @@
 import React from "react";
 import Comment from "./Comment";
+import postStyle from "../style/Post.module.css";
 
 function Post({ post }) {
   const {
@@ -8,15 +9,19 @@ function Post({ post }) {
     date,
   } = post;
   return (
-    <div>
-      <img src={avatar} alt="avatar" />
-      <p>
-        {name} <span>{date}</span>
-      </p>
-      <p>{content}</p>
-      {post.comments.map((comment) => (
-            <Comment key={comment.id} comment={comment} />
-          ))}
+    <div className={postStyle.postContainer}>
+      <section className={postStyle.postCard}>
+        <div className={postStyle.postInfoUser}>
+          <img src={avatar} alt="avatar" />
+          <p>
+            {name} <span>{date}</span>
+          </p>
+        </div>
+        <p className={postStyle.title}>{content}</p>
+        {post.comments.map((comment) => (
+          <Comment key={comment.id} comment={comment} />
+        ))}
+      </section>
     </div>
   );
 }

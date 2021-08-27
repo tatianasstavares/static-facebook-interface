@@ -1,4 +1,5 @@
 import React from "react";
+import Comment from "./Comment";
 
 function Post({ post }) {
   const {
@@ -13,6 +14,9 @@ function Post({ post }) {
         {name} <span>{date}</span>
       </p>
       <p>{content}</p>
+      {post.comments.map((comment) => (
+            <Comment key={comment.id} comment={comment} />
+          ))}
     </div>
   );
 }

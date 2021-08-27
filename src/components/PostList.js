@@ -5,6 +5,7 @@ import henrique from "../assets/henrique-schramm.jpg";
 import thiago from "../assets/thiago-tavares.jpg";
 import diego from "../assets/diego-fernandes.jpg";
 import Post from "./Post";
+import postStyle from "../style/Post.module.css"
 class PostList extends Component {
   state = {
     posts: [
@@ -92,7 +93,7 @@ class PostList extends Component {
   render() {
     return this.state.posts.map((post) => {
       return (
-          <Post key={post.id} post={post} />
+          <Post key={post.id} post={post}/>
       );
     });
   }

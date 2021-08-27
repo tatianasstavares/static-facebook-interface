@@ -1,0 +1,39 @@
+.postBackground {
+  background-color: #f2f2f2;
+}
+.postContainer {
+  width: 80%;
+  margin: auto;
+}
+
+.PostCard {
+  background-color: #ffffff;
+  height: 20%;
+  border: red solid 2px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 10px;
+
+  font-family: "Roboto", sans-serif;
+  color: #757575;
+  font-weight: 500;
+}
+.PostCard img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+
+.postTitle {
+  display: flex;
+  align-items: center;
+}
+.postTitle p {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.postTitle p span {
+  color: #bdbdbd;
+  font-size: 12px;
+}

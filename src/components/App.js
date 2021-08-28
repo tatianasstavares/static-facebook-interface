@@ -1,8 +1,13 @@
 import React from 'react';
+import Header from './Header';
+import PostList from './PostList';
 
 function App() {
     return (
-        <h2>Hello</h2>
+        <main>
+            <Header/>
+            <PostList/>
+        </main>
     )
 }
 export default App
